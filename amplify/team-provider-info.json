@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-clothremake-staging-33142-authRole",
+      "UnauthRoleArn": "arn:aws:iam::964846259641:role/amplify-clothremake-staging-33142-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::964846259641:role/amplify-clothremake-staging-33142-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-clothremake-staging-33142-deployment",
+      "UnauthRoleName": "amplify-clothremake-staging-33142-unauthRole",
+      "StackName": "amplify-clothremake-staging-33142",
+      "StackId": "arn:aws:cloudformation:us-east-1:964846259641:stack/amplify-clothremake-staging-33142/45fd5470-19c3-11ec-a9f6-0a54d2946cc7",
+      "AmplifyAppId": "d1sc98ytvja59b"
+    },
+    "categories": {
+      "auth": {
+        "clothremake": {}
+      }
+    }
+  }
+}
