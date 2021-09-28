@@ -19,7 +19,7 @@ const Collectionpage: React.FC = () => {
     for (let i = 0; i < collectionInfo.length; i++) {
       collectionArray.push(
         <CollectionItem
-          key={i}
+          key={collectionInfo[i].id}
           name={collectionInfo[i].name}
           price={collectionInfo[i].price}
           imageUrl={collectionInfo[i].imageUrl}

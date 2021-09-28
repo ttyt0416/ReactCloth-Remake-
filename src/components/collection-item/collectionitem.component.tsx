@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./collectionitem.styles.scss";
+
+import { addItem, clearCart } from "../../redux/cart/cart.actions";
+import { useDispatch } from "react-redux";
+
+import CustomButton from "../custom-button/custombutton.component";
 
 interface Collections {
   name: string;
@@ -7,7 +12,13 @@ interface Collections {
   imageUrl: string;
 }
 
-const CollectionItem: React.FC<Collections> = ({ name, price, imageUrl }) => {
+const CollectionItem: React.FC<Collections> = (item) => {
+  let { name, price, imageUrl } = item;
+  const dispatch = useDispatch();
+  const onButtonClick = () => {
+    dispatch(addItem(item));
+  };
+
   return (
     <div className="collectionItem">
       <div
@@ -18,6 +29,9 @@ const CollectionItem: React.FC<Collections> = ({ name, price, imageUrl }) => {
         <span className="collectionItem__name">{name}</span>
         <span className="collectionItem__price">{price}</span>
       </div>
+      <CustomButton inverted={true}>
+        <div onClick={onButtonClick}>ADD TO CART</div>
+      </CustomButton>
     </div>
   );
 };

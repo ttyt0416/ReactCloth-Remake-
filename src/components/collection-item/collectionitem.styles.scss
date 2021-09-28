@@ -10,6 +10,11 @@
     .collectionItem__image {
       opacity: 0.8;
     }
+
+    .customButton {
+      opacity: 0.85;
+      display: flex;
+    }
   }
 
   &__image {
@@ -35,5 +40,13 @@
 
   &__price {
     width: 10%;
+  }
+
+  .customButton {
+    width: 80%;
+    opacity: 0.7;
+    position: absolute;
+    top: 255px;
+    display: none;
   }
 }
