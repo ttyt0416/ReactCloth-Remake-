@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./collectionitem.styles.scss";
 
-import { addItem, clearCart } from "../../redux/cart/cart.actions";
+import { addItem } from "../../redux/cart/cart.actions";
 import { useDispatch } from "react-redux";
 
 import CustomButton from "../custom-button/custombutton.component";
@@ -30,7 +30,9 @@ const CollectionItem: React.FC<Collections> = (item) => {
         <span className="collectionItem__price">{price}</span>
       </div>
       <CustomButton inverted={true}>
-        <div onClick={onButtonClick}>ADD TO CART</div>
+        <div className="collectionItem__add" onClick={onButtonClick}>
+          ADD TO CART
+        </div>
       </CustomButton>
     </div>
   );
