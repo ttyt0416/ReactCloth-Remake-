@@ -35,9 +35,6 @@ const Header: React.FC<LoginStatus> = (isLoggedIn) => {
             <FontAwesomeIcon icon={faShoppingCart} />
             <span className="header__itemLength">{cartItem.length}</span>
           </div>
-          <Link className="header__options-option" to="/contact">
-            CONTACT
-          </Link>
           {isLoggedIn.isLoggedIn ? (
             <div
               className="header__options-option"

@@ -1,0 +1,74 @@
+.cartpage {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+
+  &__container {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  &__item {
+    display: flex;
+    gap: 50%;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    border-bottom: 1px dashed black;
+
+    &:first-child {
+      margin-top: 3rem;
+    }
+
+    &-image {
+      width: 15rem;
+      height: 15rem;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      font-size: 1.5rem;
+      padding-top: 3rem;
+    }
+
+    &-pricing {
+      display: flex;
+    }
+
+    &-quantity {
+      margin: 0 1rem;
+    }
+
+    &-price {
+      margin-left: 3rem;
+    }
+
+    &-plus,
+    &-minus {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.StripeCheckout {
+  background: black !important;
+  background-color: black !important;
+  padding: 0.5rem 0 !important;
+  width: 70%;
+  margin: 2rem 15%;
+
+  & > span {
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    font-size: 1.5rem !important;
+  }
+}

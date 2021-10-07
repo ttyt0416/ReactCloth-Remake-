@@ -1,12 +1,15 @@
 import React from "react";
 import "./cartdropdown.styles.scss";
 
+import { Link } from "react-router-dom";
 import { RootStateOrAny, useSelector, useDispatch } from "react-redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 import { addItem, removeItem } from "../../redux/cart/cart.actions";
+
+import CustomButton from "../custom-button/custombutton.component";
 
 const CartDropdown: React.FC = () => {
   let cartDropdownItemsArray: any = [];
@@ -67,6 +70,11 @@ const CartDropdown: React.FC = () => {
       ) : (
         <div className="cartDropdown__empty">EMPTY</div>
       )}
+      <div className="cartDropdown__link">
+        <Link to="/cart">
+          <CustomButton inverted={true}>Cart</CustomButton>
+        </Link>
+      </div>
     </div>
   );
 };

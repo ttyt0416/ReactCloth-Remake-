@@ -7,6 +7,7 @@ import { Switch, Route, Redirect } from "react-router";
 import Homepage from "./pages/homepage/homepage.component";
 import Authpage from "./pages/authpage/authpage.component";
 import Collectionpage from "./pages/collectionpage/collectionpage.component";
+import Cartpage from "./pages/cartpage/cartpage.component";
 
 import Header from "./components/header/header.component";
 
@@ -29,13 +30,6 @@ const App: React.FC = () => {
       setInit(true);
     });
   }, []);
-  const refreshUser = () => {
-    const user = authService.currentUser;
-    setUserObj({
-      displayName: user!.displayName,
-      uid: user!.uid,
-    });
-  };
 
   return (
     <div className="app">
@@ -49,7 +43,7 @@ const App: React.FC = () => {
             <Redirect to="/" />
           </Route>
         )}
-
+        <Route exact path="/cart" component={Cartpage} />
         <Route path="/shop/:id" component={Collectionpage} />
       </Switch>
     </div>
