@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./authpage.styles.scss";
 
-import { Auth } from "aws-amplify";
-import { SignUpParams } from "@aws-amplify/auth";
+import { authService, firebaseInstance } from "../../firebase/firebase";
 
 const Authpage: React.FC = () => {
   const [signInName, setSignInName] = useState<string>();
@@ -27,12 +26,15 @@ const Authpage: React.FC = () => {
 
   const Signup = async (event: any) => {
     event.preventDefault();
-    await Auth.signUp({ username: signInName!, password: signInPassword! });
+    await authService.createUserWithEmailAndPassword(
+      signUpName!,
+      signUpPassword!
+    );
   };
 
   const Signin = async (event: any) => {
     event.preventDefault();
-    await Auth.signIn(signInName!, signInPassword!);
+    await authService.signInWithEmailAndPassword(signInName!, signInPassword!);
   };
 
   return (
@@ -63,11 +65,11 @@ const Authpage: React.FC = () => {
           />
         </form>
       </div>
-      <div className="signup">
-        <form className="signup-form" onSubmit={Signup}>
-          <h1 className="signup-title">Sign Up</h1>
+      <div className="authpage__signup">
+        <form className="authpage__signup-form" onSubmit={Signup}>
+          <h1 className="authpage__signup-title">Sign Up</h1>
           <input
-            className="signup-username"
+            className="authpage__signup-username"
             type="text"
             placeholder="username"
             name="signUpName"
@@ -75,7 +77,7 @@ const Authpage: React.FC = () => {
             required
           />
           <input
-            className="signup-password"
+            className="authpage__signup-password"
             type="password"
             placeholder="password"
             name="signUpPassword"
