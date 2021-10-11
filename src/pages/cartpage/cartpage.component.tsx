@@ -9,7 +9,6 @@ import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { addItem, removeItem } from "../../redux/cart/cart.actions";
 
 import StripeButton from "../../components/stripe-button/stripebutton.component";
-import { stat } from "fs";
 
 const Cartpage: React.FC = () => {
   let CartpageItemsArray: any = [];
@@ -75,8 +74,15 @@ const Cartpage: React.FC = () => {
   return (
     <div className="cartpage">
       <h1 className="cartpage__title">Cart</h1>
-      <div className="cartpage__container">{makeCartpage()}</div>
-      <StripeButton price={getCartTotalPrice()} />
+      {cartpageItem.length !== 0 ? (
+        <>
+          {" "}
+          <div className="cartpage__container">{makeCartpage()}</div>
+          <StripeButton price={getCartTotalPrice()} />{" "}
+        </>
+      ) : (
+        <div className="cartpage__container-empty">Cart is Empty</div>
+      )}
     </div>
   );
 };

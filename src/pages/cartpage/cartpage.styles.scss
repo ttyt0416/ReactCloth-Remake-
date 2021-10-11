@@ -6,6 +6,13 @@
   &__container {
     width: 70%;
     margin: 0 auto;
+
+    &-empty {
+      text-align: center;
+      margin-top: 10rem;
+      font-weight: 500;
+      font-size: 3rem;
+    }
   }
 
   &__title {

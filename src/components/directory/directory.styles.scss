@@ -1,5 +1,10 @@
+@import "../../media-query";
+
 .directory {
   display: flex;
+  @include mobile {
+    flex-direction: column;
+  }
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 1rem;

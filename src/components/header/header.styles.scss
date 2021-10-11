@@ -27,7 +27,12 @@
       cursor: pointer;
       text-decoration: none;
       color: black;
+      white-space: nowrap;
     }
+  }
+
+  &__cartContainer {
+    white-space: nowrap;
   }
 
   &__itemLength {

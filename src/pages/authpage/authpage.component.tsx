@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./authpage.styles.scss";
 
 import { authService, firebaseInstance } from "../../firebase/firebase";
-import Auth from "@aws-amplify/auth";
+// import Auth from "@aws-amplify/auth";
 
 const Authpage: React.FC = () => {
   const [signInName, setSignInName] = useState<string>();
@@ -27,30 +27,15 @@ const Authpage: React.FC = () => {
 
   const Signup = async (event: any) => {
     event.preventDefault();
-    // await authService.createUserWithEmailAndPassword(
-    //   signUpName!,
-    //   signUpPassword!
-    // );
-    try {
-      const user = await Auth.signUp({
-        username: signUpName!,
-        password: signUpPassword!,
-      });
-      // const { confirmUser } = await Auth.confirmSignUp(signUpName!,);
-      console.log(user);
-    } catch (error) {
-      console.log("error signing up:", { error });
-    }
+    await authService.createUserWithEmailAndPassword(
+      signUpName!,
+      signUpPassword!
+    );
   };
 
   const Signin = async (event: any) => {
     event.preventDefault();
-    // await authService.signInWithEmailAndPassword(signInName!, signInPassword!);
-    try {
-      const user = await Auth.signIn(signInName!, signInPassword!);
-    } catch (error) {
-      console.log("error signing in", error);
-    }
+    await authService.signInWithEmailAndPassword(signInName!, signInPassword!);
   };
 
   return (

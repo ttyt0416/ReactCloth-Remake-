@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-import Amplify, { Auth } from "aws-amplify";
-import awsconfig from "./aws-exports";
+// import Amplify, { Auth } from "aws-amplify";
+// import awsconfig from "./aws-exports";
 import { authService } from "./firebase/firebase";
 import { Switch, Route, Redirect } from "react-router";
 
@@ -13,7 +13,7 @@ import Cartpage from "./pages/cartpage/cartpage.component";
 
 import Header from "./components/header/header.component";
 
-Amplify.configure(awsconfig);
+// Amplify.configure(awsconfig);
 const App: React.FC = () => {
   const [init, setInit] = useState(false);
   const [userObj, setUserObj] = useState<null | {
