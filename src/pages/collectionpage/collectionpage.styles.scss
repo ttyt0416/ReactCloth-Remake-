@@ -6,13 +6,17 @@
   margin-bottom: 30px;
   margin-left: 2rem;
 
+  @include notDesktop {
+    margin-left: 0rem;
+  }
+
   &__items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
     row-gap: 5rem;
 
-    @include tablet {
+    @include notDesktop {
       display: flex;
       flex-direction: column;
     }

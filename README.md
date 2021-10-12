@@ -11,7 +11,7 @@
 
 ## 소개
 
-이 사이트는 redux 및 hooks의 useDispatch, useSelector를 연습하며 예전에 만들었던 ReactCloth repository를 다시 만들었습니다. 이전에 hooks없이 react.js와 redux로만 구성하였을 때에 비해 코드가 많이 깔끔해진 느낌이 납니다. 모바일 및 태블릿을 위한 모드는 현재 작업중입니다.
+이 사이트는 redux 및 hooks의 useDispatch, useSelector를 연습하며 예전에 만들었던 ReactCloth repository를 다시 만들었습니다. 이전에 hooks없이 react.js와 redux로만 구성하였을 때에 비해 코드가 많이 깔끔해진 느낌이 납니다.
 
 ### 홈페이지
 

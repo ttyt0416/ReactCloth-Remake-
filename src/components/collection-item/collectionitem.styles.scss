@@ -1,3 +1,5 @@
+@import "../../media-query";
+
 .collectionItem {
   width: 22vw;
   display: flex;
@@ -6,14 +8,35 @@
   align-items: center;
   position: relative;
 
+  @include notDesktop {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 10rem;
+    margin: 0 auto;
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
+
   &:hover {
     .collectionItem__image {
       opacity: 0.8;
+
+      @include notDesktop {
+        opacity: 1;
+      }
     }
 
     .customButton {
       opacity: 0.85;
       display: flex;
+
+      @include notDesktop {
+        opacity: 1;
+        display: block;
+      }
     }
   }
 
@@ -23,6 +46,11 @@
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
+
+    @include tablet {
+      margin-right: 1rem;
+      height: 100%;
+    }
   }
 
   &__footer {
@@ -31,6 +59,10 @@
     display: flex;
     justify-content: space-between;
     font-size: 1.2rem;
+
+    @include tablet {
+      height: 70%;
+    }
   }
 
   &__name {
@@ -48,6 +80,24 @@
     position: absolute;
     top: 255px;
     display: none;
+
+    @include notDesktop {
+      display: block;
+      width: 20%;
+      position: absolute;
+      opacity: 1;
+    }
+
+    @include tablet {
+      top: 5rem;
+      right: 1.5rem;
+    }
+
+    @include mobile {
+      top: 130%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__add {
